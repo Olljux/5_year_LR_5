@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service Glossary {
+  rpc GetTerm(TermRequest) returns (TermReply);
+  rpc AddTerm(TermReply) returns (TermReply);
+  rpc UpdateTerm(TermReply) returns (TermReply);   // обновить описание
+  rpc DeleteTerm(TermRequest) returns (TermReply); // удалить термин
+}
+
+message TermRequest {
+  string term = 1;
+}
+
+message TermReply {
+  string term = 1;
+  string description = 2;
+}
