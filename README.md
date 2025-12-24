@@ -21,11 +21,11 @@ cd prog5_LR_5
 ```
 docker build -t grpc-glossary .
 ```
-3. Запустить контейнер (пример с портом 50052):
+3. Запустить контейнер (пример с портом 50051):
 ```
 docker run -p 50052:50051 grpc-glossary
 ```
-Теперь сервис доступен на порту 50052.
+Теперь сервис доступен на порту 50051.
 
 ---
 
@@ -38,7 +38,7 @@ import grpc
 import glossary_pb2
 import glossary_pb2_grpc
 
-channel = grpc.insecure_channel('localhost:50052')
+channel = grpc.insecure_channel('localhost:50051')
 stub = glossary_pb2_grpc.GlossaryStub(channel)
 
 # Получение термина

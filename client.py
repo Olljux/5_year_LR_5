@@ -2,7 +2,7 @@ import grpc
 import glossary_pb2
 import glossary_pb2_grpc
 
-channel = grpc.insecure_channel('localhost:50052')
+channel = grpc.insecure_channel('localhost:50051')
 stub = glossary_pb2_grpc.GlossaryStub(channel)
 
 # Добавляем термин
